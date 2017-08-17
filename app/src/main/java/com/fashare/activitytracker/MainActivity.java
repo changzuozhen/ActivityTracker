@@ -31,6 +31,17 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        findViewById(R.id.btn_close).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "关闭悬浮框", Toast.LENGTH_SHORT).show();
+                MainActivity.this.startService(
+                        new Intent(MainActivity.this, TrackerService.class)
+                                .putExtra(TrackerService.COMMAND, TrackerService.COMMAND_CLOSE)
+                );
+            }
+        });
     }
 
     private void checkOverlayPermission() {

@@ -1,16 +1,13 @@
 package com.fashare.activitytracker;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Point;
 import android.util.Log;
 import android.view.MotionEvent;
-import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import de.greenrobot.event.EventBus;
 
@@ -37,18 +34,18 @@ public class FloatingView extends LinearLayout {
         inflate(mContext, R.layout.layout_floating, this);
         mTvPackageName = (TextView) findViewById(R.id.tv_package_name);
         mTvClassName = (TextView) findViewById(R.id.tv_class_name);
-        mIvClose = (ImageView) findViewById(R.id.iv_close);
-
-        mIvClose.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(mContext, "关闭悬浮框", Toast.LENGTH_SHORT).show();
-                mContext.startService(
-                        new Intent(mContext, TrackerService.class)
-                                .putExtra(TrackerService.COMMAND, TrackerService.COMMAND_CLOSE)
-                );
-            }
-        });
+//        mIvClose = (ImageView) findViewById(R.id.iv_close);
+//
+//        mIvClose.setOnClickListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(mContext, "关闭悬浮框", Toast.LENGTH_SHORT).show();
+//                mContext.startService(
+//                        new Intent(mContext, TrackerService.class)
+//                                .putExtra(TrackerService.COMMAND, TrackerService.COMMAND_CLOSE)
+//                );
+//            }
+//        });
     }
 
     @Override
